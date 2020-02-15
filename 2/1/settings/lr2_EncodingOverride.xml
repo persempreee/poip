@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<userOverrides>
+    <override>
+        <path>C:\Users\Студент-10\Documents\KE413\LR4\main.cpp</path>
+        <encoding>Win-1251</encoding>
+    </override>
+    <override>
+        <path>C:\Users\Студент-10\Documents\KE413\startup.cpp</path>
+        <encoding>Win-1251</encoding>
+    </override>
+    <override>
+        <path>D:\kraizette\STD\VII\POIP\PROJECTS\ОТЧЕТ2\CPP.2\main.cpp</path>
+        <encoding>UTF-8</encoding>
+    </override>
+</userOverrides>

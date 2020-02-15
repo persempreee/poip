@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<workspace>
+    <project>
+        <path>$WS_DIR$\..\..\zzz\45\stm32Labs-master\Lab4Empty\lab4.ewp</path>
+    </project>
+    <project>
+        <path>$WS_DIR$\..\..\LR2\lr2.ewp</path>
+    </project>
+    <batchBuild />
+</workspace>
