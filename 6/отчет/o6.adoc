@@ -1,0 +1,132 @@
+= Отчет №6
+
+Код программы:
+
+[source, Cpp]
+----
+
+#include "adc1registers.hpp" //for ADC1
+#include "adccommonregisters.hpp" //for ADCCommon
+#include "gpioaregisters.hpp"  //for Gpioa
+#include "gpiocregisters.hpp"  //for Gpioc
+#include "rccregisters.hpp"    //for RCC
+#include <iostream>
+
+using namespace std;
+
+extern "C"
+{
+int __low_level_init(void)
+{
+  //Switch on external 8 MHz oscillator
+  RCC::CR::HSEON::On::Set();
+  while(!RCC::CR::HSERDY::Ready::IsSet())
+  {}; 
+  //Switch system clock on external oscillator
+  RCC::CFGR::SW::Hse::Set();
+  while (!RCC::CFGR::SWS::Hse::IsSet())
+  {};
+  
+   //---------------LED & voltage-----------------------------------------------
+  RCC::AHB1ENR::GPIOAEN::Enable::Set(); //LED1
+  RCC::AHB1ENR::GPIOCEN::Enable::Set(); //LED2,3,4
+  GPIOA::MODER::MODER0::Analog::Set();  //voltage
+  
+  GPIOA::MODER::MODER5::Output::Set(); //LED1
+  GPIOC::MODER::MODER5::Output::Set(); //LED4
+  GPIOC::MODER::MODER8::Output::Set(); //LED3
+  GPIOC::MODER::MODER9::Output::Set(); //LED2
+    
+   //---------------ADC1 setup--------------------------------------------------
+  //Switch on clock on ADC1
+  RCC::APB2ENR::ADC1EN::Enable::Set();
+   //Switch On internal tempearture sensor  
+  ADC_Common::CCR::TSVREFE::Enable::Set();
+  ADC1::CR1::RES::Bits12::Set();
+   //Set single conversion mode
+  ADC1::CR2::CONT::SingleConversion::Set();
+  ADC1::CR2::EOCS::SingleConversion::Set();   
+  // Set length of conversion sequence
+  ADC1::SQR1::L::Conversions2::Set(); //temperature & voltage
+  // Connect first conversion on Channel 18 (temperature)
+  ADC1::SQR3::SQ1::Channel18::Set();
+  // Connect second conversion on Channel 0 (voltage)
+   ADC1::SQR3::SQ2::Channel0::Set();
+  // Set 84 cycles sample rate for channels
+  ADC1::SMPR2::SMP0::Cycles3::Set();
+  ADC1::SMPR1::SMP18::Cycles3::Set();
+  // Enable scan mod
+  ADC1::CR1::SCAN::Enable::Set();
+  // Enable ADC1
+  ADC1::CR2::ADON::Enable::Set();
+  
+  return 1;
+}
+}
+//---------------Temperature coeficients----------------------------------------
+constexpr float B1 = 25.0F - 0.76F/0.0025F ;
+constexpr float K1 = 3.3F/(4096.0F*0.0025F);
+
+//---------------Voltage coeficients--------------------------------------------
+constexpr float B2 = 0 ;
+constexpr float K2 = 3.3F/4096;
+
+int main()
+{
+  uint32_t data = 0U ;
+  float temperature = 0.0F ;
+  float voltage = 0.0F ;
+  
+  for(;;)    
+  {
+
+    //Start conversion
+    ADC1::CR2::SWSTART::On::Set();
+    
+    //----------Temperature-----------------------------------------------------
+    // wait until Conversion is not complete 
+    while(!ADC1::SR::EOC::ConversionComplete::IsSet())
+    {};
+    data =   ADC1::DR::Get(); //Get data from ADC;
+    temperature = data * K1 + B1 ; //Convert ADC counts to temperature
+    
+    //----------Voltage---------------------------------------------------------
+    // wait until Conversion is not complete 
+    while(!ADC1::SR::EOC::ConversionComplete::IsSet())
+    {};
+    data =   ADC1::DR::Get(); //Get data from ADC;
+    voltage = data * K2 + B2 ; //Convert ADC counts to voltage
+    
+    //----------LED-------------------------------------------------------------
+    if (voltage > 0.66)
+      {
+      GPIOC::ODR::ODR5::High::Set(); 
+      if (voltage > 1.32)
+          {
+          GPIOC::ODR::ODR8::High::Set(); 
+          if (voltage > 1.98)
+            {
+            GPIOC::ODR::ODR9::High::Set(); 
+            if (voltage > 2.64)
+              {
+              GPIOA::ODR::ODR5::High::Set(); 
+              }
+            else
+            GPIOA::ODR::ODR5::Low::Set();   
+            }
+          else
+          GPIOC::ODR::ODR9::Low::Set();
+          }
+        else
+        GPIOC::ODR::ODR8::Low::Set();
+        }
+     else
+     GPIOC::ODR::ODR5::Low::Set();
+    
+    //----------I/O-------------------------------------------------------------
+  cout << "\nCount: " << data << " \nTemperature: " << temperature << "\nVoltage: " << voltage << std::endl ;
+  }
+return 0;  
+}
+
+----
