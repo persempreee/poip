@@ -1,0 +1,82 @@
+main.pbi: D:\8\ семестр\poip\2902\Lab7\main.cpp \
+  D:\8\ семестр\poip\2902\Lab7/ADC.hpp \
+  D:\8\ семестр\poip\2902\Lab7\AbstractHardware\Registers\STM32F411\adc1registers.hpp \
+  D:\8\ семестр\poip\2902\Lab7\AbstractHardware\Registers\STM32F411\FieldValues\adc1fieldvalues.hpp \
+  D:\8\ семестр\poip\2902\Lab7\AbstractHardware\Registers\fieldvalue.hpp \
+  D:\Programs\IAR\arm\inc\cpp\cstddef D:\Programs\IAR\arm\inc\c\stddef.h \
+  D:\Programs\IAR\arm\inc\c\ycheck.h D:\Programs\IAR\arm\inc\c\yvals.h \
+  D:\Programs\IAR\arm\inc\c\DLib_Defaults.h \
+  D:\\Programs\\IAR\\arm\\inc\\c\\DLib_Config_Normal.h \
+  D:\Programs\IAR\arm\inc\c\DLib_Product.h \
+  D:\Programs\IAR\arm\inc\c\ysizet.h \
+  D:\8\ семестр\poip\2902\Lab7\AbstractHardware\Registers/fieldvaluebase.hpp \
+  D:\Programs\IAR\arm\inc\cpp\type_traits \
+  D:\Programs\IAR\arm\inc\cpp\xstddef \
+  D:\Programs\IAR\arm\inc\cpp\cstdlib D:\Programs\IAR\arm\inc\c\stdlib.h \
+  D:\Programs\IAR\arm\inc\c\DLib_Product_stdlib.h \
+  D:\Programs\IAR\arm\inc\cpp\initializer_list \
+  D:\Programs\IAR\arm\inc\cpp\xtr1common \
+  D:\8\ семестр\poip\2902\Lab7\AbstractHardware\Registers/accessmode.hpp \
+  D:\8\ семестр\poip\2902\Lab7\Common\susudefs.hpp \
+  D:\8\ семестр\poip\2902\Lab7\AbstractHardware\Registers/registerfield.hpp \
+  D:\Programs\IAR\arm\inc\cpp\cassert D:\Programs\IAR\arm\inc\c\assert.h \
+  D:\8\ семестр\poip\2902\Lab7\AbstractHardware\Atomic\atomicutils.hpp \
+  D:\Programs\IAR\arm\inc\cpp\cstdint D:\Programs\IAR\arm\inc\c\stdint.h \
+  D:\8\ семестр\poip\2902\Lab7\AbstractHardware\Registers\registerbase.hpp \
+  D:\8\ семестр\poip\2902\Lab7\AbstractHardware\Registers/registertype.hpp \
+  D:\8\ семестр\poip\2902\Lab7\AbstractHardware\Registers\register.hpp \
+  D:\8\ семестр\poip\2902\Lab7\AbstractHardware\Registers/fieldvalue.hpp \
+  D:\8\ семестр\poip\2902\Lab7\AbstractHardware\Registers\accessmode.hpp \
+  D:\8\ семестр\poip\2902\Lab7\AbstractHardware\Registers\STM32F411\adccommonregisters.hpp \
+  D:\8\ семестр\poip\2902\Lab7\AbstractHardware\Registers\STM32F411\FieldValues\adccommonfieldvalues.hpp \
+  D:\Programs\IAR\arm\inc\cpp\iostream \
+  D:\Programs\IAR\arm\inc\cpp\istream \
+  D:\Programs\IAR\arm\inc\cpp\ostream D:\Programs\IAR\arm\inc\cpp\ios \
+  D:\Programs\IAR\arm\inc\cpp\xlocnum \
+  D:\Programs\IAR\arm\inc\cpp\climits D:\Programs\IAR\arm\inc\c\limits.h \
+  D:\Programs\IAR\arm\inc\cpp\cmath D:\Programs\IAR\arm\inc\c\math.h \
+  D:\Programs\IAR\arm\inc\c\DLib_float_setup.h \
+  D:\Programs\IAR\arm\inc\c\xtgmath.h \
+  D:\Programs\IAR\arm\inc\cpp\streambuf \
+  D:\Programs\IAR\arm\inc\cpp\xiosbase \
+  D:\Programs\IAR\arm\inc\cpp\xlocale \
+  D:\Programs\IAR\arm\inc\cpp\cstring D:\Programs\IAR\arm\inc\c\string.h \
+  D:\Programs\IAR\arm\inc\c\DLib_Product_string.h \
+  D:\Programs\IAR\arm\inc\cpp\clocale D:\Programs\IAR\arm\inc\c\locale.h \
+  D:\Programs\IAR\arm\inc\c\xctype.h \
+  D:\Programs\IAR\arm\inc\c\xlocale_lconv.h \
+  D:\Programs\IAR\arm\inc\cpp\cwctype D:\Programs\IAR\arm\inc\c\wctype.h \
+  D:\Programs\IAR\arm\inc\cpp\stdexcept \
+  D:\Programs\IAR\arm\inc\cpp\exception \
+  D:\Programs\IAR\arm\inc\cpp\xxexception \
+  D:\Programs\IAR\arm\inc\cpp\xstring \
+  D:\Programs\IAR\arm\inc\cpp\xmemory0 \
+  D:\Programs\IAR\arm\inc\cpp\limits D:\Programs\IAR\arm\inc\cpp\cfloat \
+  D:\Programs\IAR\arm\inc\c\float.h D:\Programs\IAR\arm\inc\cpp\cwchar \
+  D:\Programs\IAR\arm\inc\c\wchar.h D:\Programs\IAR\arm\inc\cpp\new \
+  D:\Programs\IAR\arm\inc\cpp\xutility \
+  D:\Programs\IAR\arm\inc\cpp\utility D:\Programs\IAR\arm\inc\cpp\iosfwd \
+  D:\Programs\IAR\arm\inc\cpp\cstdio D:\Programs\IAR\arm\inc\c\stdio.h \
+  D:\Programs\IAR\arm\inc\c\xatomic.h \
+  D:\Programs\IAR\arm\inc\cpp\typeinfo \
+  D:\Programs\IAR\arm\inc\cpp\xlocinfo \
+  D:\Programs\IAR\arm\inc\cpp\cctype D:\Programs\IAR\arm\inc\c\ctype.h \
+  D:\Programs\IAR\arm\inc\cpp\ctime D:\Programs\IAR\arm\inc\c\time.h \
+  D:\Programs\IAR\arm\inc\c/time32.h \
+  D:\Programs\IAR\arm\inc\cpp\system_error \
+  D:\Programs\IAR\arm\inc\cpp\cerrno D:\Programs\IAR\arm\inc\c\errno.h \
+  D:\Programs\IAR\arm\inc\cpp\array \
+  D:\Programs\IAR\arm\inc\cpp\algorithm \
+  D:\Programs\IAR\arm\inc\cpp\xmemory \
+  D:\Programs\IAR\arm\inc\cpp\iterator D:\Programs\IAR\arm\inc\cpp\tuple \
+  D:\8\ семестр\poip\2902\Lab7/Temp.hpp \
+  D:\8\ семестр\poip\2902\Lab7/IVariable.hpp \
+  D:\8\ семестр\poip\2902\Lab7/Voltage.hpp \
+  D:\8\ семестр\poip\2902\Lab7\AbstractHardware\Registers\STM32F411\gpioaregisters.hpp \
+  D:\8\ семестр\poip\2902\Lab7\AbstractHardware\Registers\STM32F411\FieldValues\gpioafieldvalues.hpp \
+  D:\8\ семестр\poip\2902\Lab7\AbstractHardware\Registers\STM32F411\gpiocregisters.hpp \
+  D:\8\ семестр\poip\2902\Lab7\AbstractHardware\Registers\STM32F411\FieldValues\gpiocfieldvalues.hpp \
+  D:\8\ семестр\poip\2902\Lab7\AbstractHardware\Registers\STM32F411\rccregisters.hpp \
+  D:\8\ семестр\poip\2902\Lab7\AbstractHardware\Registers\STM32F411\FieldValues\rccfieldvalues.hpp \
+  D:\8\ семестр\poip\2902\Lab7\AbstractHardware\Registers\STM32F411\tim2registers.hpp \
+  D:\8\ семестр\poip\2902\Lab7\AbstractHardware\Registers\STM32F411\FieldValues\tim2fieldvalues.hpp
